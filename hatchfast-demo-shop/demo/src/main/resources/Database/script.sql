@@ -1,11 +1,11 @@
---POSTGRESQL 
+POSTGRESQL 
 
---customer table
+customer table
 
 
---Table: public.Customer
+ Table: public.Customer
 
-DROP TABLE IF EXISTS public."Customer" CASCADE;
+DROP TABLE IF EXISTS public."Customer";
 
 CREATE TABLE IF NOT EXISTS public."Customer"
 (
@@ -22,13 +22,12 @@ ALTER TABLE IF EXISTS public."Customer"
     OWNER to postgres;
 
 
---2.product table
+2.product table
 
 
---Table: public.Product
+Table: public.Product
 
-
- DROP TABLE IF EXISTS public."Product" CASCADE ;
+ DROP TABLE IF EXISTS public."Product";
 
 CREATE TABLE IF NOT EXISTS public."Product"
 (
@@ -45,13 +44,13 @@ CREATE TABLE IF NOT EXISTS public."Product"
 ALTER TABLE IF EXISTS public."Product"
     OWNER to postgres;
 
---3.Cart
+3.Cart
 
 
 
---Table: public.cart
+Table: public.cart
 
- DROP TABLE IF EXISTS public.cart CASCADE;
+ DROP TABLE IF EXISTS public.cart;
 
 CREATE TABLE IF NOT EXISTS public.cart
 (
@@ -76,11 +75,11 @@ ALTER TABLE IF EXISTS public.cart
     OWNER to postgres;
 
 
---4.Order
+4.Order
 
- --Table: public.order
+ Table: public.order
 
-DROP TABLE IF EXISTS public."order" CASCADE;
+DROP TABLE IF EXISTS public."order";
 
 CREATE TABLE IF NOT EXISTS public."order"
 (
@@ -105,12 +104,12 @@ ALTER TABLE IF EXISTS public."order"
     OWNER to postgres;
 
 
---5.Order_Item
+5.Order_Item
 
 
---Table: public.order_item
+Table: public.order_item
 
-DROP TABLE IF EXISTS public.order_item CASCADE;
+DROP TABLE IF EXISTS public.order_item;
 
 CREATE TABLE IF NOT EXISTS public.order_item
 (
@@ -131,4 +130,3 @@ CREATE TABLE IF NOT EXISTS public.order_item
 
 ALTER TABLE IF EXISTS public.order_item
     OWNER to postgres;
-    
