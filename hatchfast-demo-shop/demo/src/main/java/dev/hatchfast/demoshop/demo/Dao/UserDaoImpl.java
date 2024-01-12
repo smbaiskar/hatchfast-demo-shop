@@ -2,16 +2,16 @@ package dev.hatchfast.demoshop.demo.Dao;
 
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.stereotype.Repository;
 
+import dev.hatchfast.demoshop.demo.Entities.Customer;
 import dev.hatchfast.demoshop.demo.Entities.Products;
 
 @Repository
 public class UserDaoImpl implements IUserDao{
 
 	@Override
-	public User authenticateUser(String UserName, String password) {
+	public Customer authenticateUser(String UserName, String password) {
 		
 		String jpql = "select u from User u where u.userName = :Username and u.password = :password";
 

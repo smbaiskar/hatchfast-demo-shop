@@ -1,10 +1,10 @@
 package dev.hatchfast.demoshop.demo.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.stereotype.Service;
 
 import dev.hatchfast.demoshop.demo.Dao.IUserDao;
+import dev.hatchfast.demoshop.demo.Entities.Customer;
 
 
 
@@ -15,8 +15,8 @@ public class LoginServiceImpl implements LoginService
 	private IUserDao userDao;
 	
 	@Override
-	public String authenticateUser(String UserName, String password) {
-		User user = null;
+	public Customer authenticateUser(String UserName, String password) {
+		Customer user = null;
 		try 
 		{
 			user = userDao.authenticateUser(UserName, password);
@@ -26,7 +26,7 @@ public class LoginServiceImpl implements LoginService
 			System.out.println(e.getMessage());
 		}
 		
-		return "USERNAME"+UserName;
+		return user;
 	}
 
 	@Override

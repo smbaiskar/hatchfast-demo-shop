@@ -9,7 +9,7 @@ import jakarta.persistence.GenerationType;
 
 @Entity
 @jakarta.persistence.Table(name="Iuser")
-public class IUser {
+public class Customer {
 	
 	@jakarta.persistence.Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,7 +67,7 @@ public class IUser {
 		this.lname = lname;
 	}
 
-	public IUser(int id, String userName, String password, String fname, String lname) {
+	public Customer(int id, String userName, String password, String fname, String lname) {
 		super();
 		Id = id;
 		userName = userName;
@@ -76,13 +76,13 @@ public class IUser {
 		this.lname = lname;
 	}
 
-	public IUser() {
+	public Customer() {
 		super();
 	}
 
 	@Override
 	public String toString() {
-		return "IUser [Id=" + Id + ", UserName=" + userName + ", Password=" + password + ", fname=" + fname + ", lname="
+		return "Customer [Id=" + Id + ", UserName=" + userName + ", Password=" + password + ", fname=" + fname + ", lname="
 				+ lname + "]";
 	}
 	
