@@ -8,23 +8,24 @@ import jakarta.persistence.GenerationType;
 
 
 @Entity
-@jakarta.persistence.Table(name="Iuser")
+@jakarta.persistence.Table(name="Customer")
 public class Customer {
 	
 	@jakarta.persistence.Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="customer_id", nullable = false)
 	private int Id;
 	
-	@Column(name="USERNAME",length= 25,nullable = false)
+	@Column(name="user_name",length= 25,nullable = false)
 	private String userName;
 	
-	@Column(name="Password",length=25,nullable = false)
+	@Column(name="password",length=25,nullable = false)
 	private String password;
 	
-	@Column(name="firstname",length=15,nullable = false)
+	@Column(name="fname",length=15,nullable = false)
 	private String fname;
 	
-	@Column(name="lastname",length=15,nullable = false)
+	@Column(name="lname",length=15,nullable = false)
 	private String lname;
 
 	public int getId() {
@@ -40,7 +41,7 @@ public class Customer {
 	}
 
 	public void setUserName(String userName) {
-		userName = userName;
+		this.userName = userName;
 	}
 
 	public String getPassword() {
@@ -48,7 +49,7 @@ public class Customer {
 	}
 
 	public void setPassword(String password) {
-		password = password;
+		this.password = password;
 	}
 
 	public String getFname() {
@@ -70,8 +71,8 @@ public class Customer {
 	public Customer(int id, String userName, String password, String fname, String lname) {
 		super();
 		Id = id;
-		userName = userName;
-		password = password;
+		this.userName = userName;
+		this.password = password;
 		this.fname = fname;
 		this.lname = lname;
 	}
