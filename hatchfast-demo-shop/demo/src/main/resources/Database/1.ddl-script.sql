@@ -1,56 +1,59 @@
-POSTGRESQL 
+--POSTGRESQL 
 
-customer table
+--customer table
 
 
- Table: public.Customer
+--Table: public.customer
 
-DROP TABLE IF EXISTS public."Customer";
+DROP TABLE IF EXISTS public."customer" CASCADE;
 
-CREATE TABLE IF NOT EXISTS public."Customer"
+CREATE TABLE IF NOT EXISTS public."customer"
 (
     customer_id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
     fname character varying(20) COLLATE pg_catalog."default" NOT NULL,
     lname character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    user_name character varying(20) COLLATE pg_catalog."default" NOT NULL,
     password character varying(15) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT "Customer_pkey" PRIMARY KEY (customer_id)
+    CONSTRAINT "customer_pkey" PRIMARY KEY (customer_id)
 )
 
 ;
 
-ALTER TABLE IF EXISTS public."Customer"
+ALTER TABLE IF EXISTS public."customer"
     OWNER to postgres;
 
 
-2.product table
+--2.product table
 
 
-Table: public.Product
+--Table: public.product
 
- DROP TABLE IF EXISTS public."Product";
+DROP TABLE IF EXISTS public."product" CASCADE;
 
-CREATE TABLE IF NOT EXISTS public."Product"
+CREATE TABLE IF NOT EXISTS public."product"
 (
     product_id integer NOT NULL,
     product_name character varying COLLATE pg_catalog."default" NOT NULL,
     price numeric(10,2) NOT NULL,
     description character varying(255) COLLATE pg_catalog."default" NOT NULL,
     image bytea NOT NULL,
-    CONSTRAINT "Product_pkey" PRIMARY KEY (product_id)
+    CONSTRAINT "product_pkey" PRIMARY KEY (product_id)
 )
 
 ;
 
-ALTER TABLE IF EXISTS public."Product"
+ALTER TABLE IF EXISTS public."product"
     OWNER to postgres;
 
-3.Cart
+
+   
+--3.Cart
 
 
 
-Table: public.cart
+--Table: public.cart
 
- DROP TABLE IF EXISTS public.cart;
+DROP TABLE IF EXISTS public.cart CASCADE;
 
 CREATE TABLE IF NOT EXISTS public.cart
 (
@@ -60,11 +63,13 @@ CREATE TABLE IF NOT EXISTS public.cart
     quantity integer NOT NULL,
     CONSTRAINT cart_pkey PRIMARY KEY (cart_id),
     CONSTRAINT cart_customer_id_fkey FOREIGN KEY (customer_id)
-        REFERENCES public."Customer" (customer_id) MATCH SIMPLE
+        REFERENCES public."customer" (customer_id) MATCH simple
+        
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
     CONSTRAINT cart_product_id_fkey FOREIGN KEY (product_id)
-        REFERENCES public."Product" (product_id) MATCH SIMPLE
+        REFERENCES public."product" (product_id) MATCH simple
+        
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
@@ -75,11 +80,12 @@ ALTER TABLE IF EXISTS public.cart
     OWNER to postgres;
 
 
-4.Order
+   
+--4.Order
 
- Table: public.order
+--Table: public.order
 
-DROP TABLE IF EXISTS public."order";
+DROP TABLE IF EXISTS public."order" CASCADE;
 
 CREATE TABLE IF NOT EXISTS public."order"
 (
@@ -93,7 +99,8 @@ CREATE TABLE IF NOT EXISTS public."order"
     total_after_tax numeric(10,2) NOT NULL,
     CONSTRAINT order_pkey PRIMARY KEY (order_id),
     CONSTRAINT order_customer_id_fkey FOREIGN KEY (customer_id)
-        REFERENCES public."Customer" (customer_id) MATCH SIMPLE
+        REFERENCES public."customer" (customer_id) MATCH simple
+        
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
@@ -104,12 +111,12 @@ ALTER TABLE IF EXISTS public."order"
     OWNER to postgres;
 
 
-5.Order_Item
+--5.Order_Item
 
 
-Table: public.order_item
+--Table: public.order_item
 
-DROP TABLE IF EXISTS public.order_item;
+DROP TABLE IF EXISTS public.order_item CASCADE;
 
 CREATE TABLE IF NOT EXISTS public.order_item
 (
@@ -121,7 +128,8 @@ CREATE TABLE IF NOT EXISTS public.order_item
     price numeric(10,2) NOT NULL,
     CONSTRAINT order_item_pkey PRIMARY KEY (order_item_id),
     CONSTRAINT orderitems_orderid_fkey FOREIGN KEY (order_id)
-        REFERENCES public."order" (order_id) MATCH SIMPLE
+        REFERENCES public."order" (order_id) MATCH simple
+        
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
@@ -130,3 +138,4 @@ CREATE TABLE IF NOT EXISTS public.order_item
 
 ALTER TABLE IF EXISTS public.order_item
     OWNER to postgres;
+    

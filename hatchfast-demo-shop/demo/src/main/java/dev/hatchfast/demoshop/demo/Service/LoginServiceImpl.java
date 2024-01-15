@@ -1,32 +1,34 @@
 package dev.hatchfast.demoshop.demo.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-import dev.hatchfast.demoshop.demo.Dao.IUserDao;
+import dev.hatchfast.demoshop.demo.Entities.Customer;
+import dev.hatchfast.demoshop.demo.repository.CustomerRepository;
 
 
 
-@Service
+@Repository
 public class LoginServiceImpl implements LoginService
 {
 	@Autowired
-	private IUserDao userDao;
+	private CustomerRepository cRepository;
 	
 	@Override
-	public String authenticateUser(String UserName, String password) {
-		User user = null;
+	public Customer authenticateUser(String UserName, String password) {
+		Customer user = null;
 		try 
 		{
-			user = userDao.authenticateUser(UserName, password);
+			user = cRepository.authenticateUser(UserName, password);
+			
 		}
 		catch(Exception e) 
 		{
 			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 		
-		return "USERNAME"+UserName;
+		return user;
 	}
 
 	@Override
