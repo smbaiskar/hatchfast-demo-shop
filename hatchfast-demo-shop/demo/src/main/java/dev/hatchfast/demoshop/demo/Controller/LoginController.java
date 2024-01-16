@@ -15,6 +15,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
 import dev.hatchfast.demoshop.demo.Entities.Customer;
+import dev.hatchfast.demoshop.demo.Entities.User;
 import dev.hatchfast.demoshop.demo.Service.LoginResponse;
 import dev.hatchfast.demoshop.demo.Service.LoginService;
 
@@ -42,6 +43,7 @@ public class LoginController {
 
 	@PostMapping("/test")
 	public ResponseEntity<LoginResponse> test(@RequestBody String jsonRequest) {
+		User xUser = null;
 		System.out.println("in validateUser() of : " + getClass().getName());
 		System.out.println(jsonRequest);
 		JsonObject json = gson.fromJson(jsonRequest, JsonObject.class);
@@ -50,6 +52,8 @@ public class LoginController {
 		String pwd = json.get("password").getAsString();
 		System.out.println("userName : " + userName + ", password : " + pwd);
 
+		System.out.println(xUser);
+		
 		Customer user = loginService.authenticateUser(userName, pwd);
 		System.out.println(user);
 
@@ -68,6 +72,7 @@ public class LoginController {
 	 @GetMapping("/test1")
 	    public ResponseEntity<?> getById() {
 
+		 
 	      
 	            return new ResponseEntity<String>("WORKING FINE", HttpStatus.OK);
 
