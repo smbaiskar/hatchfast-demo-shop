@@ -27,8 +27,8 @@ export class LoginComponent {
   // password= new FormControl('');
 
   loginForm = new FormGroup({
-    userName: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
+    userName: new FormControl('demo', Validators.required),
+    password: new FormControl('password', Validators.required),
   });
 
   constructor(private router: Router,
@@ -40,15 +40,23 @@ export class LoginComponent {
 
     console.log(this.loginForm.get('userName')?.value)
     console.log(this.loginForm.get('password')?.value)
-    this.http.post('https://api.example.com/endpoint', { data: 'some data' })
-      .subscribe(data => {
-        // handle the data
-        //todo - make server call to check if user is valid
-        //if valid, proceed to shop page otherwise show error notification
+    // this.http.post('https://api.example.com/endpoint', { data: 'some data' })
+    //   .subscribe(data => {
+    //     // handle the data
+    //     //todo - make server call to check if user is valid
+    //     //if valid, proceed to shop page otherwise show error notification
 
+    //     this.router.navigate(['/shop']);
+    //   });
+
+      let userName = this.loginForm.get('userName')?.value
+      let pass = this.loginForm.get('password')?.value
+
+      if(userName == 'demo' && pass == 'password'){
         this.router.navigate(['/shop']);
-      });
-
+      }else{
+        alert('Invalid credentials')
+      }
 
   }
 }

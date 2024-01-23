@@ -21,15 +21,6 @@ body {
     cursor: pointer;
 }
 
-.cart {
-    border: none;
-    position: absolute; 
-    right: 160px;
-}
-
-
-
-
 .card{
     background-color:white;
 }
@@ -38,6 +29,12 @@ body {
     position: relative;
     
 
+}
+
+.cart{
+    position: absolute;
+    right: 10px;
+    top: 16px;
 }
 
 .test{
@@ -61,9 +58,24 @@ body {
     height: 20px;
 }
   
-.CupBoard{
+
+.cartCount{
+    background-color: #e2231a;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    color: #fff;
+    font-weight: 400;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
     position: absolute;
-    left: 350px ;
-    bottom: 100px;
-    background: rgb(244, 242, 242);
+    font-size: 11px;
 }

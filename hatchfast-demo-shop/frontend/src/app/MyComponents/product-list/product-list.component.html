@@ -1,12 +1,89 @@
-
-<div>
-    <!-- <div *ngFor="let product of shopProducts>
-        {{product.name}}
-    </div> -->
-    <!-- <li *ngFor="let item of shopProducts">item</li> -->
+<!-- <div>
     <ul>
         <li *ngFor="let product of shopProducts">
           {{product.name}}
         </li>
       </ul>
+</div> -->
+
+<!-- <div>
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span></span>
+    <span class="example-spacer"></span>
+    <mat-icon class="cart">add_shopping_cart</mat-icon>
+  </mat-toolbar>
+</div> -->
+
+<div class="pageTitle" style="">
+  Products
+</div>
+
+<div class="container">
+  <!-- <ul>
+    <li *ngFor="let product of shopProducts">
+      {{product.name}}
+    </li>
+  </ul> -->
+  <mat-card class="product-card" alt="content" *ngFor="let product of shopProducts" routerLink="/product/{{product.id}}">
+    <div class="grid-item">
+      <mat-card-title class="productTitle">{{product.name}}</mat-card-title>
+      <div class="bg-gray-100 p-6 rounded-lg">
+        <img class="h-40 rounded w-full object-cover object-center mb-6"
+          src="/assets/products/{{product.imageUrl}}"
+          alt="content">
+        <p class="productDescription" matTooltip="{{product.description}}"> {{product.description}} </p>
+      </div>
+    </div>
+  </mat-card>
+
+  <!-- <mat-card class="example-card" alt="content">
+    <div class="grid-item">
+      <mat-card-title>Water bottle</mat-card-title>
+      <div class="bg-gray-100 p-6 rounded-lg">
+        <img class="h-40 rounded w-full object-cover object-center mb-6"
+          src="https://images.pexels.com/photos/3195774/pexels-photo-3195774.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          alt="content">
+        <p> A handy water bottle for your pocket friendly use.</p>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card class="example-card" alt="content">
+    <div class="grid-item">
+      <mat-card-title>T-shirt </mat-card-title>
+      <div class="bg-gray-100 p-6 rounded-lg">
+        <img class="h-40 rounded w-full object-cover object-center mb-6"
+          src="https://media.istockphoto.com/id/1323480815/photo/navy-t-shirt.jpg?s=2048x2048&w=is&k=20&c=Ydszzx-5Yn3LHcKXqYmiswGmaqloP4N5EMn_3v7-6j4="
+          alt="content">
+        <p> Minimalist T-shirts for everyday use. </p>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card class="example-card" alt="content">
+    <div class="grid-item">
+      <mat-card-title>Kitchen Cabinet</mat-card-title>
+      <div class="bg-gray-100 p-6 rounded-lg">
+        <img class="h-40 rounded w-full object-cover object-center mb-6"
+          src="https://images.pexels.com/photos/7045839/pexels-photo-7045839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="content">
+        <p>Stylish rich looking cabinet for kitchen. </p>
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card class="example-card" alt="content">
+    <div class="grid-item">
+      <mat-card-title>Sneakers</mat-card-title>
+      <div class="bg-gray-100 p-6 rounded-lg">
+        <img class="h-40 rounded w-full object-cover object-center mb-6"
+          src="https://images.pexels.com/photos/1598508/pexels-photo-1598508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          alt="content">
+        <p> Comfortable pair of sneakers for all day long. </p>
+      </div>
+    </div>
+  </mat-card> -->
 </div>

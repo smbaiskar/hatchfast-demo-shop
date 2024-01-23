@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { AppHelper } from './MyComponents/shared/app.helper';
 
 
 
@@ -26,4 +27,5 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent {
   title: string = 'cloud market';
+  cartCount: number = AppHelper.getCartElementsCount();
 }

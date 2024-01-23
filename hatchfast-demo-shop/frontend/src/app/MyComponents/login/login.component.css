@@ -1,0 +1,17 @@
+.login-container {
+    display: block;
+    text-align: center;
+    margin-top: 10%;
+    width: 400px;
+    /* border: 1px solid red; */
+    padding: 30px;
+    /* background-color: aliceblue; */
+    margin-left: calc(50% - 200px);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+
+.login-form-field{
+    display: block;
+}

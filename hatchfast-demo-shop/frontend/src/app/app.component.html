@@ -1,5 +1,18 @@
-<router-outlet></router-outlet>
+<div>
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <!-- <span><img src="https://hatchfast.dev/assets/img/HatchFast_Logo-Design_Inverted-Png%201.png"> <label>Demo</label></span> -->
+    <span class="example-spacer"></span>
+    <span class="cartCount">{{cartCount}}</span>
+    <mat-icon class="cart">add_shopping_cart</mat-icon>
+  </mat-toolbar>
+</div>
 
+<div>
+  <router-outlet></router-outlet>
+</div>
 <!-- <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
     <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">{{title}}</h2>
@@ -35,7 +48,7 @@
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">{{title}}</h2>
         </div> -->
-        <div>
+<!-- <div>
           <mat-toolbar>
             <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
               <mat-icon>menu</mat-icon>
@@ -64,8 +77,8 @@
             </div>
           </div>
         </mat-card>
-        <div>
-        <!-- <div> 
+        <div> -->
+<!-- <div> 
             <div class="CupBoard">
               <h2>Cup Board</h2>
               <img class="h-40 rounded-lg w-full object-cover object-center mb-6"
@@ -77,7 +90,7 @@
 
 
 
-        <!-- <div class="Cupboard">
+<!-- <div class="Cupboard">
               <mat-card-title>Cupboard Set</mat-card-title>
               <img class="bg-gray-100 p-6 rounded-lg"
                 src="https://5.imimg.com/data5/UG/DA/ED/ANDROID-11030347/product-jpeg.jpg" alt="content">
@@ -87,7 +100,7 @@
 
 
 
-        <!-- <div class="xl:w-1/4 md:w-1/2 p-4">
+<!-- <div class="xl:w-1/4 md:w-1/2 p-4">
             <div class="bg-gray-100 p-6 rounded-lg">
               <img class="h-40 rounded w-full object-cover object-center mb-6"
                 src="https://5.imimg.com/data5/UG/DA/ED/ANDROID-11030347/product-jpeg.jpg" alt="content">
