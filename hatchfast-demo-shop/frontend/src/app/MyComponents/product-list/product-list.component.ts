@@ -32,4 +32,11 @@ export class ProductListComponent {
   showProductDetails() {
     console.log('showProductDetails')
   }
+
+  addToCart(productId:any){
+    console.log(productId)
+    AppHelper.addToCart(productId)
+
+
+  }
 }
