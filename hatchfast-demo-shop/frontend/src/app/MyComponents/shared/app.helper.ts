@@ -1,6 +1,10 @@
+import { Subject } from "rxjs";
 import { Product } from "../../models/product";
 
 export class AppHelper {
+
+    private static cartSubject: Subject<boolean> = new Subject<boolean>();
+
     static shopProducts: Product[] = [
         new Product(111, "Water Bottle", "A handy water bottle for you", "bottle.jpeg", 14.99 ),
         new Product(222, "Tshirt", "Minimalist tees for all day use", "Tshirt.jpg", 9.99 ),
@@ -24,10 +28,16 @@ export class AppHelper {
     static addToCart(productId: number) {
         let prod = this.getProductForId(productId) 
         if(prod){
-            this.cartProducts.push(prod)
+            if(this.cartProducts.indexOf(prod) >=0){
+                this.removeFrom(productId)
+            }else{
+                this.cartProducts.push(prod)
+            }
+            
         }else{
             alert('Product Not Found')
         }
+        this.cartSubject.next(true)
     }
 
     static removeFrom(productId: number) {
@@ -42,9 +52,14 @@ export class AppHelper {
         }else{
             alert('Product Not Present in the Cart')
         }
+        this.cartSubject.next(true)
     }
 
     static getCartElementsCount(){
         return this.cartProducts.length;
+    }
+
+    static getCartSubject() : Subject<boolean> {
+        return this.cartSubject;
     }
 }

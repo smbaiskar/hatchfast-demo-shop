@@ -27,5 +27,15 @@ import { AppHelper } from './MyComponents/shared/app.helper';
 })
 export class AppComponent {
   title: string = 'cloud market';
-  cartCount: number = AppHelper.getCartElementsCount();
+  cartCount: number = 0;
+
+  constructor(){
+    this.cartCount = AppHelper.getCartElementsCount();
+    AppHelper.getCartSubject()
+      .subscribe(event => {
+        this.cartCount = AppHelper.getCartElementsCount();
+      })
+  }
+
+  
 }
