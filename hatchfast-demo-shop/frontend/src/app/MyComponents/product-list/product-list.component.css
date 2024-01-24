@@ -12,9 +12,7 @@
 
 }
 
-/* Style for grid items */
 /* .grid-item { */
-  /* Add styling for your grid items here */
   /* border: 1px solid #ddd; 
     padding: 10px; 
     text-align: center; */
@@ -44,8 +42,8 @@
 
 .productDescription {
   text-align: start;
-  height: 44px;
-  text-overflow: ellipsis;
-  width: 200px;
-  overflow: hidden;
+    height: 44px;
+    text-overflow: ellipsis;
+    width: 200px;
+    overflow: hidden;
 }

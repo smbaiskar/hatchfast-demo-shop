@@ -8,11 +8,13 @@ import { Product } from '../../models/product';
 import { MatTooltipModule } from '@angular/material/tooltip'; 
 import { provideRouter, Route, RouterLink } from '@angular/router'; 
 import { AppHelper } from '../shared/app.helper';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatIconModule, MatCardModule, MatTooltipModule, RouterLink],
+  imports: [CommonModule, MatToolbarModule, MatIconModule, MatCardModule, MatTooltipModule, RouterLink, MatButtonModule],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -24,6 +26,8 @@ export class ProductListComponent {
   }
 
   shopProducts: Product[] = AppHelper.getAllProducts()
+ 
+  
 
   showProductDetails() {
     console.log('showProductDetails')

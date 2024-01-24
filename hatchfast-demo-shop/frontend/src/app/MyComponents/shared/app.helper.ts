@@ -3,13 +3,13 @@ import { Product } from "../../models/product";
 export class AppHelper {
     static shopProducts: Product[] = [
         new Product(111, "Water Bottle", "A handy water bottle for you", "bottle.jpeg", 14.99 ),
-        new Product(222, "Tshirt", "Minimalist tees for all day use", "Tshirt.jpg", 14.99 ),
-        new Product(333, "Cabinet Set", "Colorful cabinet set for your interiors", "Cabinet.jpg", 14.99 ),
-        new Product(444, "Trousers", "Pair of trousers for office wear", "trousers.jpg", 14.99 ),
-        new Product(555, "Headphones", "Headphones with best sound quality", "Headphones.jpg", 14.99 ),
-        new Product(666, "Backpack", "A wellsuited multipurpose backpack", "backpack.jpg", 14.99 ),
-        new Product(777, "Bicycle", "Bright colored geared bicycle for fitness", "Bicycle.jpg", 14.99 ),
-        new Product(888, "Microwave Oven", "Microwave oven for kitchen essentials", "Microwave Oven.jpg", 14.99 )
+        new Product(222, "Tshirt", "Minimalist tees for all day use", "Tshirt.jpg", 9.99 ),
+        new Product(333, "Cabinet Set", "Colorful cabinet set for your interiors", "Cabinet.jpg", 49.99 ),
+        new Product(444, "Trousers", "Pair of trousers for office wear", "trousers.jpg", 11.99 ),
+        new Product(555, "Headphones", "Headphones with best sound quality", "Headphones.jpg", 29.99 ),
+        new Product(666, "Backpack", "A wellsuited multipurpose backpack", "backpack.jpg", 34.99 ),
+        new Product(777, "Bicycle", "Bright colored geared bicycle for fitness", "Bicycle.jpg", 39.99 ),
+        new Product(888, "Microwave Oven", "Microwave oven for kitchen essentials", "Microwave Oven.jpg", 59.99 )
       ]
 
     static cartProducts: Product[] = []
@@ -17,7 +17,6 @@ export class AppHelper {
     static getAllProducts() : Product []{
         return this.shopProducts
     }
-
     static getProductForId(productId: number) {
         return this.shopProducts.find(item => item.id == productId)
     }

@@ -17,7 +17,7 @@
   </mat-toolbar>
 </div> -->
 
-<div class="pageTitle" style="">
+<div class="pageTitle">
   Products
 </div>
 
@@ -35,55 +35,12 @@
           src="/assets/products/{{product.imageUrl}}"
           alt="content">
         <p class="productDescription" matTooltip="{{product.description}}"> {{product.description}} </p>
-      </div>
-    </div>
-  </mat-card>
+        <p class="price">${{product.price}}</p>
 
-  <!-- <mat-card class="example-card" alt="content">
-    <div class="grid-item">
-      <mat-card-title>Water bottle</mat-card-title>
-      <div class="bg-gray-100 p-6 rounded-lg">
-        <img class="h-40 rounded w-full object-cover object-center mb-6"
-          src="https://images.pexels.com/photos/3195774/pexels-photo-3195774.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          alt="content">
-        <p> A handy water bottle for your pocket friendly use.</p>
-      </div>
+  <div class="example-button-row ">
+       
+        <button mat-stroked-button color="warn" >Add to Cart</button>
+      
     </div>
-  </mat-card>
-
-  <mat-card class="example-card" alt="content">
-    <div class="grid-item">
-      <mat-card-title>T-shirt </mat-card-title>
-      <div class="bg-gray-100 p-6 rounded-lg">
-        <img class="h-40 rounded w-full object-cover object-center mb-6"
-          src="https://media.istockphoto.com/id/1323480815/photo/navy-t-shirt.jpg?s=2048x2048&w=is&k=20&c=Ydszzx-5Yn3LHcKXqYmiswGmaqloP4N5EMn_3v7-6j4="
-          alt="content">
-        <p> Minimalist T-shirts for everyday use. </p>
-      </div>
-    </div>
-  </mat-card>
-
-  <mat-card class="example-card" alt="content">
-    <div class="grid-item">
-      <mat-card-title>Kitchen Cabinet</mat-card-title>
-      <div class="bg-gray-100 p-6 rounded-lg">
-        <img class="h-40 rounded w-full object-cover object-center mb-6"
-          src="https://images.pexels.com/photos/7045839/pexels-photo-7045839.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="content">
-        <p>Stylish rich looking cabinet for kitchen. </p>
-      </div>
-    </div>
-  </mat-card>
-
-  <mat-card class="example-card" alt="content">
-    <div class="grid-item">
-      <mat-card-title>Sneakers</mat-card-title>
-      <div class="bg-gray-100 p-6 rounded-lg">
-        <img class="h-40 rounded w-full object-cover object-center mb-6"
-          src="https://images.pexels.com/photos/1598508/pexels-photo-1598508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="content">
-        <p> Comfortable pair of sneakers for all day long. </p>
-      </div>
-    </div>
-  </mat-card> -->
+  
 </div>
