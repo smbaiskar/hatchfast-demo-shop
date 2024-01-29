@@ -79,3 +79,9 @@ body {
     position: absolute;
     font-size: 11px;
 }
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+}
