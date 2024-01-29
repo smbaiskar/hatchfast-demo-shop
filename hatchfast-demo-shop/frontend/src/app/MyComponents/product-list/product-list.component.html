@@ -22,11 +22,6 @@
 </div>
 
 <div class="container">
-  <!-- <ul>
-    <li *ngFor="let product of shopProducts">
-      {{product.name}}
-    </li>
-  </ul> -->
   <mat-card class="product-card" alt="content" *ngFor="let product of shopProducts">
     <div class="grid-item" routerLink="/product/{{product.id}}">
       <mat-card-title class="productTitle">{{product.name}}</mat-card-title>
@@ -35,16 +30,13 @@
           alt="content">
         <p class="productDescription" matTooltip="{{product.description}}"> {{product.description}} </p>
         <p class="price">${{product.price}}</p>
-
-
-  <div class="example-button-row ">
-       
-        <button mat-stroked-button color="warn">Add to Cart</button>
-      
       </div>
     </div>
     <div class="example-button-row ">
-
       <button mat-stroked-button color="warn" (click)="addToCart(product.id)">Add to Cart</button>
-
     </div>
+  </mat-card>
+
+
+
+</div>
