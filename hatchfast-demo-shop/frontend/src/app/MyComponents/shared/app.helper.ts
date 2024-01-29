@@ -6,7 +6,7 @@ export class AppHelper {
     private static cartSubject: Subject<boolean> = new Subject<boolean>();
 
     static shopProducts: Product[] = [
-        new Product(111, "Water Bottle", "A handy water bottle for you", "bottle.jpeg", 14.99 ),
+        new Product(111, "Water Bottle", "A handy water bottle for you", "waterBottle.jpg", 14.99 ),
         new Product(222, "Tshirt", "Minimalist tees for all day use", "Tshirt.jpg", 9.99 ),
         new Product(333, "Cabinet Set", "Colorful cabinet set for your interiors", "Cabinet.jpg", 49.99 ),
         new Product(444, "Trousers", "Pair of trousers for office wear", "trousers.jpg", 11.99 ),
