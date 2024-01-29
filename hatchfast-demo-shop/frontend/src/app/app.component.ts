@@ -25,11 +25,12 @@ import { AppHelper } from './MyComponents/shared/app.helper';
   imports: [MatButtonModule, RouterOutlet, FormsModule, 
   MatFormFieldModule, MatInputModule, MatToolbarModule, 
   MatIconModule, MatCardModule, HttpClientModule,
-  FormsModule, ReactiveFormsModule  ]
+  FormsModule, ReactiveFormsModule, CommonModule  ]
 })
 export class AppComponent {
   title: string = 'cloud market';
   cartCount: number = 0;
+  isUserLoggedIn: boolean  = false;
 
   constructor(){
     this.cartCount = AppHelper.getCartElementsCount();
