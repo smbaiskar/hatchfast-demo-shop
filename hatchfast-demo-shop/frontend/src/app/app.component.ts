@@ -59,5 +59,9 @@ export class AppComponent {
     }
 
   }
+
+  showCartPage(){
+    console.log('showCartPage')
+  }
 }
 

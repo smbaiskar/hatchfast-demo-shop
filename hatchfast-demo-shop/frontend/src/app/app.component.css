@@ -37,6 +37,10 @@ body {
     top: 16px;
 }
 
+.cartIcon{
+    cursor: pointer;
+}
+
 .test{
     position: absolute;
     left: 530px;

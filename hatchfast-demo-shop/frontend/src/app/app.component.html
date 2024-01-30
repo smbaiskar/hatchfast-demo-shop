@@ -5,8 +5,10 @@
     </button>
     <!-- <span><img src="https://hatchfast.dev/assets/img/HatchFast_Logo-Design_Inverted-Png%201.png"> <label>Demo</label></span> -->
     <span class="example-spacer"></span>
-    <span class="cartCount">{{cartCount}}</span>
-    <mat-icon class="cart" routerlink="/ShoppingCartComponent">add_shopping_cart</mat-icon>
+    <span (click)="showCartPage()" class="cartIcon">
+      <span class="cartCount">{{cartCount}}</span>
+      <mat-icon class="cart" routerlink="/ShoppingCartComponent">add_shopping_cart</mat-icon>
+    </span>
   </mat-toolbar>
 </div>
 
