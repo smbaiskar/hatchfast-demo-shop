@@ -2,8 +2,16 @@ import { Subject } from "rxjs";
 import { Product } from "../../models/product";
 
 export class AppHelper {
+    static getLoggedInUserSuject() {
+      throw new Error('Method not implemented.');
+    }
 
+
+    private static LoggedInUserSubject:Subject<boolean>=new Subject<boolean>();
+    private static LoggedInUser:any=null;
     private static cartSubject: Subject<boolean> = new Subject<boolean>();
+    
+
 
     static shopProducts: Product[] = [
         new Product(111, "Water Bottle", "A handy water bottle for you", "waterBottle.jpg", 14.99 ),
@@ -60,6 +68,25 @@ export class AppHelper {
     }
 
     static getCartSubject() : Subject<boolean> {
+     
         return this.cartSubject;
     }
+    static getLoggedInUserSubject()
+    {
+        return this.LoggedInUserSubject;
+    }
+    static setLoggedInUser(user:any)
+    {
+        
+        this.LoggedInUser=user;
+        if (typeof window !== 'undefined') {
+            console.log('we are running on the client')
+            sessionStorage.setItem("DemoLoggedInUser", user ? user.userName : "")
+        }    
+        this.LoggedInUserSubject.next(this.LoggedInUser!=null)
+
+    }
+    
+
+
 }

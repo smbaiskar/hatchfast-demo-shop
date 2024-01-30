@@ -17,28 +17,47 @@ import { AppHelper } from './MyComponents/shared/app.helper';
 
 
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [MatButtonModule, RouterOutlet, FormsModule, 
-  MatFormFieldModule, MatInputModule, MatToolbarModule, 
-  MatIconModule, MatCardModule, HttpClientModule,
-  FormsModule, ReactiveFormsModule, CommonModule  ]
+
+  imports: [MatButtonModule, RouterOutlet, FormsModule,
+    MatFormFieldModule, MatInputModule, MatToolbarModule,
+    MatIconModule, MatCardModule, HttpClientModule,
+    FormsModule, ReactiveFormsModule, CommonModule]
 })
 export class AppComponent {
   title: string = 'cloud market';
   cartCount: number = 0;
-  isUserLoggedIn: boolean  = false;
+  isUserLoggedIn: boolean = false
 
-  constructor(){
+  constructor() {
     this.cartCount = AppHelper.getCartElementsCount();
     AppHelper.getCartSubject()
       .subscribe(event => {
         this.cartCount = AppHelper.getCartElementsCount();
       })
-  }
+    AppHelper.getLoggedInUserSubject()
+      .subscribe(isLoggedIn => {
+        this.isUserLoggedIn = isLoggedIn
+      })
 
-  
+    // this.isUserLoggedIn = sessionStorage.getItem('DemoLoggedInUser') != undefined ? true : false;
+      // let loggedInUserName = sessionStorage.getItem('DemoLoggedInUser')
+      // localStorage.getItem('Test')
+      // let sessionStorage : Storage
+      // sessionStorage.getItem('DemoLoggedInUser')
+
+      if (typeof window !== 'undefined') {
+        console.log('we are running on the client')
+        this.isUserLoggedIn = sessionStorage.getItem('DemoLoggedInUser') != undefined ? true : false;
+    } else {
+        console.log('we are running on the server');
+    }
+
+  }
 }
+

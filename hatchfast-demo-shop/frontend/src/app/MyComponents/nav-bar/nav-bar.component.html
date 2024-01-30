@@ -1,1 +1,15 @@
-<p>nav-bar works!</p>
+  <div *ngIf="isUserLoggedIn">
+    <mat-toolbar>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+    
+       <span class="example-spacer"></span>
+      <span class="cartCount">{{cartCount}}</span>
+      <mat-icon class="cart">add_shopping_cart</mat-icon>
+    </mat-toolbar> 
+   </div>  
+  <h1 style="color: blue;">Hello there</h1>
+    <div style="margin-top: 100px;">
+    <router-outlet></router-outlet>
+  </div> 

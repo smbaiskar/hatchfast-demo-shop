@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AppHelper } from '../shared/app.helper';
 
 
 
@@ -33,7 +34,7 @@ export class LoginComponent {
 
   constructor(private router: Router,
     private http: HttpClient) {
-
+      AppHelper.setLoggedInUser(null)
   }
 
   loginButtonClick() {
@@ -53,8 +54,16 @@ export class LoginComponent {
       let pass = this.loginForm.get('password')?.value
 
       if(userName == 'demo' && pass == 'password'){
+
+        //send server request to validate credentials
+
+        // if credentials are valid, set logged-in user in AppHelper and notify subscribers
+        AppHelper.setLoggedInUser({"userName" : "TestUser", "userId" : 111})
+
+
         this.router.navigate(['/shop']);
       }else{
+        AppHelper.setLoggedInUser(null)
         alert('Invalid credentials')
       }
 
