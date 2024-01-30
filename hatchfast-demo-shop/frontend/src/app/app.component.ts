@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,6 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { AppHelper } from './MyComponents/shared/app.helper';
+
 
 
 
@@ -34,7 +35,9 @@ export class AppComponent {
   cartCount: number = 0;
   isUserLoggedIn: boolean = false
 
-  constructor() {
+  
+    constructor(private router: Router){
+
     this.cartCount = AppHelper.getCartElementsCount();
     AppHelper.getCartSubject()
       .subscribe(event => {
@@ -62,6 +65,14 @@ export class AppComponent {
 
   showCartPage(){
     console.log('showCartPage')
+    if(AppHelper.getCartElementsCount() > 0){
+ 
+      console.log("navigate to cart page")
+      this.router.navigate(['/cart']);
+
+
+
+    }
   }
 }
 

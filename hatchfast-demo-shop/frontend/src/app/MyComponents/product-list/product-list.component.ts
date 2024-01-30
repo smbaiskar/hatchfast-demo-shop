@@ -22,6 +22,7 @@ import { MatTooltip } from '@angular/material/tooltip';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
+cartIcon: any;
 
  
   constructor(){
