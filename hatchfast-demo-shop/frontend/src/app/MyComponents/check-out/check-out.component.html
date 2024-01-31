@@ -1,40 +1,45 @@
 <h2>Checkout: Your Information</h2>
 
 
+
 <div class="example-input-wrapper">
 </div>
 
 <div class="table">
 
     <mat-vertical-stepper [linear]="false">
-        <mat-step [stepControl]="firstFormGroup">
+        <mat-step [stepControl]="firstFormGroup" >
             <form [formGroup]="firstFormGroup">
                 <ng-template matStepLabel>First Name</ng-template>
                 <mat-form-field>
+                    <mat-label>First Name</mat-label>
                     <input matInput placeholder="First Name" formControlName="firstCtrl" required>
+                    <mat-error>First Name is required</mat-error>
                 </mat-form-field>
                 <div>
-                    <button mat-button matStepperNext>Next</button>
+                    <button mat-button matStepperNext [disabled]="this.firstFormGroup.invalid">Next</button>
                 </div>
             </form>
         </mat-step>
-        <mat-step [stepControl]="secondFormGroup">
+        <mat-step [stepControl]="secondFormGroup" >
             <form [formGroup]="secondFormGroup">
                 <ng-template matStepLabel>Last Name</ng-template>
                 <mat-form-field>
+                    <mat-label>Last Name</mat-label>
                     <input matInput placeholder="Last Name" formControlName="secondCtrl" required>
                 </mat-form-field>
                 <div>
                     <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
+                    <button mat-button matStepperNext [disabled]="this.secondFormGroup.invalid">Next</button>
                 </div>
             </form>
         </mat-step>
-        <mat-step [stepControl]="thirdFormGroup">
+        <mat-step [stepControl]="thirdFormGroup" >
             <form [formGroup]="thirdFormGroup">
                 <ng-template matStepLabel>Zip Code</ng-template>
                 <mat-form-field>
-                    <input matInput placeholder="ZipCode" formControlName="thirdCtrl" required>
+                    <mat-label>Zip Code</mat-label>
+                    <input matInput placeholder="ZipCode" formControlName="thirdCtrl" >
                 </mat-form-field>
                 <div>
                     <button mat-button matStepperPrevious>Back</button>
@@ -48,5 +53,5 @@
 
 
 
-<input type="submit" class="cancelButton" data-test="cancel" id="cancel"    name="Cancel" value="cancel">
-<input type="submit" class="continueButton" data-test="continue" id="continue"    name="continue" value="Continue">
+<input type="submit" routerLink="/cart" class="cancelButton" data-test="cancel" id="cancel"    name="Cancel" value="cancel">
+<input type="submit" class="continueButton" [disabled]="this.firstFormGroup.invalid || this.secondFormGroup.invalid || this.thirdFormGroup.invalid" data-test="continue" id="continue"    name="continue" value="Continue">
