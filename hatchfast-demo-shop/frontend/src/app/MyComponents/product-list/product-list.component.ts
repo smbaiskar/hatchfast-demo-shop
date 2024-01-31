@@ -10,14 +10,13 @@ import { provideRouter, Route, RouterLink } from '@angular/router';
 import { AppHelper } from '../shared/app.helper';
 import {MatButtonModule} from '@angular/material/button';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
-import { MatTooltip } from '@angular/material/tooltip';
 
 
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatIconModule, MatCardModule, RouterLink, MatButtonModule,NavBarComponent, MatTooltip],
+  imports: [CommonModule, MatToolbarModule, MatIconModule, MatCardModule, RouterLink, MatButtonModule,NavBarComponent, MatTooltipModule],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })

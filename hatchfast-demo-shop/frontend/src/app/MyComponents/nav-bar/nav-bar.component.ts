@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [RouterOutlet, MatIconModule, MatToolbar, CommonModule],
+  imports: [RouterOutlet, MatIconModule, CommonModule,  MatCardModule, MatToolbarModule, MatTooltipModule],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })

@@ -1,1 +1,52 @@
-<p>check-out works!</p>
+<h2>Checkout: Your Information</h2>
+
+
+<div class="example-input-wrapper">
+</div>
+
+<div class="table">
+
+    <mat-vertical-stepper [linear]="false">
+        <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>First Name</ng-template>
+                <mat-form-field>
+                    <input matInput placeholder="First Name" formControlName="firstCtrl" required>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Last Name</ng-template>
+                <mat-form-field>
+                    <input matInput placeholder="Last Name" formControlName="secondCtrl" required>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Zip Code</ng-template>
+                <mat-form-field>
+                    <input matInput placeholder="ZipCode" formControlName="thirdCtrl" required>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                </div>
+            </form>
+        </mat-step>
+    </mat-vertical-stepper>
+
+
+</div>
+
+
+
+<input type="submit" class="cancelButton" data-test="cancel" id="cancel"    name="Cancel" value="cancel">
+<input type="submit" class="continueButton" data-test="continue" id="continue"    name="continue" value="Continue">

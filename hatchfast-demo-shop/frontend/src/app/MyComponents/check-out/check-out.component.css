@@ -1,0 +1,39 @@
+.example-input-wrapper {
+    margin-bottom: 16px;
+    align-items: center;
+  }
+  
+  label {
+    margin-right: 4px;
+  }
+
+.table{
+    /* border: 2px solid red; */
+    /* border-color: black;  */
+    box-shadow: 0 4px 8px 0 rgba(0, 0,0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    text-align: center;
+    margin-top: 12%;
+    width: 400px;
+    margin-left: 35%;
+    margin-top: 3%;
+
+    
+}
+
+.continueButton{
+    background-color: transparent;
+    border-radius: 0px;
+    padding: 10px 10px 10px;
+    margin-left: 60%;
+}
+
+.cancelButton{
+    background-color: transparent;
+    border-radius: 2px;
+    padding: 10px 10px 15px;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+  
