@@ -22,6 +22,9 @@ import { CartService } from '../../cart.service';
 export class OrderOverviewComponent {
 
   cartProducts! : Product[];
+  cartPrice: number = 0.0;
+  taxPrice: number = 0.0;
+  totalPrice: number = 0.0;
 
   constructor(
     private cartService: CartService

@@ -1,5 +1,5 @@
 <div class="pageTitle">
-    Shopping Cart
+    Order Overview
 </div>
 
 <div class="container">
@@ -22,16 +22,18 @@
 
 <div class="info">
     <h2>Payment Information:</h2>
-    <h5>CloudCard #1452</h5>
+    <h5 class="description">CloudCard #1452</h5>
     <br>
     <div class="delInfo">
         <h2>Delivery Information:</h2>
-        <h5>Free Cloud Delivery.</h5>
+        <h5 class="description">Free Cloud Delivery.</h5>
     </div>
     <br>
     <div>
         <h2>Price Total:</h2>
-        <h5>Item Total: $</h5>
+        <h5  class="description">Item Total: $ {{cartPrice}}</h5>
+        <h5  class="description">Tax: $ {{taxPrice}}</h5>
+        <h2>Total: $ {{totalPrice}}</h2>
     </div>
 </div>
 
