@@ -29,6 +29,11 @@ export class AppHelper {
     static getAllProducts() : Product []{
         return this.shopProducts
     }
+
+    static getCartProducts() : Product []{
+        return this.cartProducts
+    }
+
     static getProductForId(productId: number) {
         return this.shopProducts.find(item => item.id == productId)
     }
