@@ -1,39 +1,9 @@
-.divTable {
-
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: left;
-    margin-top: 12%;
-    width: 70%;
-    margin-left: 10%;
-    margin-top: 4%;
-}
-
-.heading {
-    margin-left: 4%;
-    margin-top: 1%;
-    padding-top: 1%;
-}
 
 .info {
     text-align: left;
     margin-top: 12%;
     margin-left: 10%;
     margin-top: 5%;
-}
-.finishButton {
-    display: table-cell;
-    font-size: 14px;
-    left: 75%;
-    min-width: 120px;
-    display: table-cell;
-}
-
-.cancelButton {
-    display: table-cell;
-    font-size: 14px;
-    margin-left: 13%;
-    min-width: 120px;
-    display: table-cell;
 }
 
 .cart {

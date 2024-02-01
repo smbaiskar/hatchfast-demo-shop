@@ -33,5 +33,12 @@ export class OrderOverviewComponent {
 
   }
 
+  finishButtonClick(){
+    console.log("finishButtonClick")
+    AppHelper.clearCart()
+
+    //redirect to thank you page
+  }
+
 }
 

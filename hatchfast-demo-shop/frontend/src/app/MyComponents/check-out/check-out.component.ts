@@ -12,7 +12,8 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-check-out',
   standalone: true,
-  imports: [MatStepperModule,FormsModule,ReactiveFormsModule,MatFormFieldModule,MatInputModule,MatButtonModule,RouterModule,CommonModule],
+  imports: [MatStepperModule,FormsModule,ReactiveFormsModule,
+    MatFormFieldModule,MatInputModule,MatButtonModule,RouterModule,CommonModule],
   templateUrl: './check-out.component.html',
   styleUrl: './check-out.component.css'
 })
