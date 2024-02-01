@@ -35,6 +35,7 @@ export class LoginComponent {
   constructor(private router: Router,
     private http: HttpClient) {
       AppHelper.setLoggedInUser(null)
+      AppHelper.clearCart()
   }
 
   loginButtonClick() {

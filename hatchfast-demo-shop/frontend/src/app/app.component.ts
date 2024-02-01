@@ -38,6 +38,7 @@ export class AppComponent {
   
     constructor(private router: Router){
 
+    AppHelper.getCartProducts();
     this.cartCount = AppHelper.getCartElementsCount();
     AppHelper.getCartSubject()
       .subscribe(event => {

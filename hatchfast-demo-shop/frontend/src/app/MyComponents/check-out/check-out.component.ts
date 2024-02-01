@@ -34,8 +34,3 @@ export class CheckOutComponent {
   // secondFormGroup: FormGroup = this._formBuilder.group({ secondCtrl: [''] });
   // thirdFormGroup: FormGroup = this._formBuilder.group({ thirdCtrl: [''] });
 }
-
-
-
-
-

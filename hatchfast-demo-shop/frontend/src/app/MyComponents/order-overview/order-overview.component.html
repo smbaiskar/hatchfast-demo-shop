@@ -1,1 +1,44 @@
-<p>order-overview works!</p>
+<div class="pageTitle">
+    Shopping Cart
+</div>
+
+<div class="container">
+    <mat-card class="product-card" alt="content" *ngFor="let product of cartProducts">
+        <div class="qty">1</div>
+        <div class="grid-item">
+            <mat-card-title class="productTitle">{{product.name}}</mat-card-title>
+            <div>
+                <p class="productDescription" matTooltip="{{product.description}}"> {{product.description}} </p>
+            </div>
+            <span class="priceButtonContainer">
+                <p class="price">${{product.price}}</p>
+                <!-- <button mat-stroked-button color="warn" class="removeFromCart"
+                    (click)="removeFromCart(product.id)">Remove</button> -->
+            </span>
+        </div>
+    </mat-card>
+</div>
+
+
+<div class="info">
+    <h2>Payment Information:</h2>
+    <h5>CloudCard #1452</h5>
+    <br>
+    <div class="delInfo">
+        <h2>Delivery Information:</h2>
+        <h5>Free Cloud Delivery.</h5>
+    </div>
+    <br>
+    <div>
+        <h2>Price Total:</h2>
+        <h5>Item Total: $</h5>
+    </div>
+</div>
+
+<span style="padding-bottom:100px;">
+    <button *ngIf="cartProducts && cartProducts.length > 0" mat-raised-button color="accent" routerLink="/shop"
+        class="cancelButton">&lt;- Continue Shopping</button>
+    <button *ngIf="cartProducts && cartProducts.length > 0" mat-raised-button color="primary" routerLink="/checkout"
+        class="continueButton">Checkout</button>
+</span>
+

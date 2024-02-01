@@ -31,7 +31,31 @@ export class AppHelper {
     }
 
     static getCartProducts() : Product []{
+
+        if(!this.cartProducts || this.cartProducts.length == 0){
+            if (typeof window !== 'undefined') {
+                console.log('we are running on the client')
+                let sessionCartProductsStr: any = sessionStorage.getItem("DemoCartProducts")
+                if (sessionCartProductsStr) {
+                    this.cartProducts = JSON.parse(sessionCartProductsStr)
+                }else{
+                    this.cartProducts = []
+                }
+            }  
+        }
         return this.cartProducts
+    }
+
+    private static updateSessionCartProducts(){
+        if (typeof window !== 'undefined') {
+            console.log('we are running on the client')
+            if(!this.cartProducts){
+                this.cartProducts = []
+            }
+            let sessionCartProductsStr = JSON.stringify(this.cartProducts)
+            sessionStorage.setItem("DemoCartProducts", sessionCartProductsStr)
+        }  
+        this.cartSubject.next(true)
     }
 
     static getProductForId(productId: number) {
@@ -50,7 +74,8 @@ export class AppHelper {
         }else{
             alert('Product Not Found')
         }
-        this.cartSubject.next(true)
+        this.updateSessionCartProducts()
+        // this.cartSubject.next(true)
     }
 
     static removeFrom(productId: number) {
@@ -65,7 +90,9 @@ export class AppHelper {
         }else{
             alert('Product Not Present in the Cart')
         }
-        this.cartSubject.next(true)
+
+        this.updateSessionCartProducts()
+        
     }
 
     static getCartElementsCount(){
@@ -90,6 +117,11 @@ export class AppHelper {
         }    
         this.LoggedInUserSubject.next(this.LoggedInUser!=null)
 
+    }
+
+    static clearCart(){
+        this.cartProducts = [];
+        this.updateSessionCartProducts()
     }
     
 

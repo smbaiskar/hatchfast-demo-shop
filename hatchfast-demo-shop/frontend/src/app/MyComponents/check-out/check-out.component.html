@@ -1,5 +1,5 @@
 <div class="pageTitle">
-    Shopping Cart
+    Checkout
 </div>
 
 
@@ -53,6 +53,13 @@
 </div>
 
 
-
+<!-- 
 <input type="submit" routerLink="/cart" class="cancelButton" data-test="cancel" id="cancel"    name="Cancel" value="cancel">
-<input type="submit" class="continueButton" [disabled]="this.firstFormGroup.invalid || this.secondFormGroup.invalid || this.thirdFormGroup.invalid" data-test="continue" id="continue"    name="continue" value="Continue">
+<input type="submit" class="continueButton" [disabled]="this.firstFormGroup.invalid || this.secondFormGroup.invalid || this.thirdFormGroup.invalid" data-test="continue" id="continue"    name="continue" value="Continue"> -->
+<span style="padding-bottom:100px;">
+    <button  mat-raised-button color="accent" routerLink="/cart"
+        class="cancelButton">&lt;- Continue Shopping</button>
+    <button  mat-raised-button color="primary" routerLink="/orderoverview"
+        [disabled]="this.firstFormGroup.invalid || this.secondFormGroup.invalid || this.thirdFormGroup.invalid"
+        class="continueButton">Order Overview</button>
+</span>
