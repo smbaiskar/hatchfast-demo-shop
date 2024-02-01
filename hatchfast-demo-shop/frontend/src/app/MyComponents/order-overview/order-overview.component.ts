@@ -11,6 +11,9 @@ import { AppHelper } from '../shared/app.helper';
 import {MatButtonModule} from '@angular/material/button';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { CartService } from '../../cart.service';
+import { get } from 'http';
+import { ProductDetailsComponent } from '../product-details/product-details.component';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-order-overview',
@@ -26,14 +29,15 @@ export class OrderOverviewComponent {
   taxPrice: number = 0.0;
   totalPrice: number = 0.0;
 
+  
+  
+
   constructor(
     private cartService: CartService
   ){
 
     this.cartProducts = AppHelper.getCartProducts()
- 
-    // this.cartProducts = AppHelper.getAllProducts()
-
+    
   }
 
   finishButtonClick(){

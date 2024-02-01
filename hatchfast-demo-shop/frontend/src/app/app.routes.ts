@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
+import path from 'path';
 import { CheckOutComponent } from './MyComponents/check-out/check-out.component';
+import { FinishPageComponent } from './MyComponents/finish-page/finish-page.component';
 import { LoginComponent } from './MyComponents/login/login.component';
 import { OrderOverviewComponent } from './MyComponents/order-overview/order-overview.component';
 import { ProductDetailsComponent } from './MyComponents/product-details/product-details.component';
@@ -38,4 +40,8 @@ export const routes: Routes = [
         path:'orderoverview',
         component: OrderOverviewComponent
     },
+    {
+        path:'finishPage',
+        component: FinishPageComponent
+    }
 ];
