@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -24,8 +24,6 @@ import { AppHelper } from '../shared/app.helper';
 })
 export class LoginComponent {
 
-  // userName= new FormControl('');
-  // password= new FormControl('');
 
   loginForm = new FormGroup({
     userName: new FormControl('demo', Validators.required),
@@ -34,39 +32,44 @@ export class LoginComponent {
 
   constructor(private router: Router,
     private http: HttpClient) {
-      AppHelper.setLoggedInUser(null)
-      AppHelper.clearCart()
+    AppHelper.setLoggedInUser(null)
+    AppHelper.clearCart()
   }
 
   loginButtonClick() {
 
     console.log(this.loginForm.get('userName')?.value)
     console.log(this.loginForm.get('password')?.value)
-    // this.http.post('https://api.example.com/endpoint', { data: 'some data' })
-    //   .subscribe(data => {
-    //     // handle the data
-    //     //todo - make server call to check if user is valid
-    //     //if valid, proceed to shop page otherwise show error notification
+    let userName = this.loginForm.get('userName')?.value
+    let pass = this.loginForm.get('password')?.value
 
-    //     this.router.navigate(['/shop']);
-    //   });
+    this.http.post('http://localhost:8080/mypath/login/test', {
+      "userName": userName,
+      "password": pass
+    }).subscribe((response: any) => {
+      // handle response body
+      console.log(response)
 
-      let userName = this.loginForm.get('userName')?.value
-      let pass = this.loginForm.get('password')?.value
+      if (response) {
 
-      if(userName == 'demo' && pass == 'password'){
+        if (response.error) {
+          alert(response.message)
+        } else {
+          // if credentials are valid, set logged-in user in AppHelper and notify subscribers
+          AppHelper.setLoggedInUser(response.customer)
+          this.router.navigate(['/shop']);
+        }
 
-        //send server request to validate credentials
-
-        // if credentials are valid, set logged-in user in AppHelper and notify subscribers
-        AppHelper.setLoggedInUser({"userName" : "TestUser", "userId" : 111})
-
-
-        this.router.navigate(['/shop']);
-      }else{
+      } else {
         AppHelper.setLoggedInUser(null)
         alert('Invalid credentials')
       }
+    },
+      error => {
+        // handle error response
+        console.log(error)
+        alert(error.message)
+      });
 
   }
 }

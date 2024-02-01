@@ -6,6 +6,7 @@ public class LoginResponse {
 
 	private Customer customer;
 	private String message;
+	private Boolean error = false;
 	
 	public Customer getCustomer() {
 		return customer;
@@ -18,6 +19,12 @@ public class LoginResponse {
 	}
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	public Boolean getError() {
+		return error;
+	}
+	public void setError(Boolean error) {
+		this.error = error;
 	}
 
 }
