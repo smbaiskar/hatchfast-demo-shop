@@ -37,6 +37,22 @@ export class OrderOverviewComponent {
   ){
 
     this.cartProducts = AppHelper.getCartProducts()
+    if(this.cartProducts && this.cartProducts.length > 0){
+      this.cartPrice = 0.0;
+      this.taxPrice = 0.0;
+      this.totalPrice = 0.0;
+
+      this.cartProducts.forEach(product => {
+        this.cartPrice += product.price
+      })
+      this.cartPrice = Math.round(this.cartPrice * 100) / 100
+      this.taxPrice = Math.round(this.cartPrice * 0.18 * 100) / 100 ;
+      this.totalPrice = Math.round((this.cartPrice + this.taxPrice) * 100) / 100 
+    }else{
+      this.cartPrice = 0.0;
+      this.taxPrice = 0.0;
+      this.totalPrice = 0.0;
+    }
     
   }
 
