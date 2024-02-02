@@ -1,2 +1,13 @@
-{{product?.name}}
 
+<div><mat-card class="product-card" alt="content"  *ngIf="product">
+    
+    <div class="grid-item" >
+        <mat-card-title class="productTitle">{{product.name}}</mat-card-title>
+        <div class="bg-gray-100 p-6 rounded-lg">
+          <img class="product-img" src="/assets/products/{{product.imageUrl}}"
+            alt="content">
+          <p class="productDescription" matTooltip="{{product.description}}"> {{product.description}} </p>
+          <p class="price">${{product.price}}</p>
+        </div>
+    </div>
+</mat-card></div>
