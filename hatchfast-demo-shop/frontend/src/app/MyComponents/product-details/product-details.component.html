@@ -1,5 +1,11 @@
+<div class="pageTitle">
+    Product Details
+  </div>
+  <div>
+    <button  mat-raised-button color="primary"    class="HomeBtn"  routerLink="/shop" > &lt;- Back </button>
+</div>
 
-<div><mat-card class="product-card" alt="content"  *ngIf="product">
+<div class="pr"><mat-card class="product-card" alt="content"  *ngIf="product">
     
     <div class="grid-item" >
         <mat-card-title class="productTitle">{{product.name}}</mat-card-title>
@@ -9,5 +15,8 @@
           <p class="productDescription" matTooltip="{{product.description}}"> {{product.description}} </p>
           <p class="price">${{product.price}}</p>
         </div>
+        <button mat-stroked-button color="warn" (click)="addToCart()">Add to Cart</button>
+
+        
     </div>
 </mat-card></div>
