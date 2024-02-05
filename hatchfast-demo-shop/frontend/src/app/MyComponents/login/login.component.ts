@@ -26,8 +26,8 @@ export class LoginComponent {
 
 
   loginForm = new FormGroup({
-    userName: new FormControl('demo', Validators.required),
-    password: new FormControl('password', Validators.required),
+    userName: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
   });
 
   constructor(private router: Router,
@@ -43,7 +43,7 @@ export class LoginComponent {
     let userName = this.loginForm.get('userName')?.value
     let pass = this.loginForm.get('password')?.value
 
-    this.http.post('http://localhost:8080/mypath/login/test', {
+    this.http.post('http://localhost:8081/mypath/login/test', {
       "userName": userName,
       "password": pass
     }).subscribe((response: any) => {

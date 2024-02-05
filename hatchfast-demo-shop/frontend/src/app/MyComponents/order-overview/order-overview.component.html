@@ -32,12 +32,11 @@
     <div>
         <h2>Price Total:</h2>
         <h5  class="description">Item Total: $ {{cartPrice}}</h5>
-        <h5  class="description">Tax: $ {{taxPrice}}</h5>
-        <h2>Total: $ {{totalPrice}}</h2>
+        <h5  class="description">Tax: $ {{taxPrice}}</h5>  <h2>Total: $ {{totalPrice}}</h2>
+       
     </div>
 </div>
-
-<span style="padding-bottom:100px;">
+<span >
     <button *ngIf="cartProducts && cartProducts.length > 0" mat-raised-button color="accent" routerLink="/shop"
         class="cancelButton">&lt;- Continue Shopping</button>
     <button *ngIf="cartProducts && cartProducts.length > 0" routerLink="/finishPage" mat-raised-button color="primary" (click)="finishButtonClick()" class="continueButton">Finish</button>

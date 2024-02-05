@@ -7,8 +7,8 @@
   Products
 </div>
 
-<div class="container">
-  <mat-card class="product-card" alt="content" *ngFor="let product of shopProducts">
+<div  class="container">
+  <mat-card id="shopping_cart_container" class="product-card" alt="content" *ngFor="let product of shopProducts">
     <div class="grid-item" routerLink="/product/{{product.id}}">
       <mat-card-title class="productTitle">{{product.name}}</mat-card-title>
       <div class="bg-gray-100 p-6 rounded-lg">
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="example-button-row ">
-      <button mat-stroked-button color="warn" (click)="addToCart(product.id)">Add to Cart</button>
+      <button mat-stroked-button color="warn" id="AddToCart" (click)="addToCart(product.id)">Add to Cart</button>
     </div>
   </mat-card>
 </div>

@@ -8,13 +8,13 @@
 
 <div class="table">
 
-    <mat-vertical-stepper [linear]="false">
+    <mat-vertical-stepper  [linear]="false">
         <mat-step [stepControl]="firstFormGroup" >
             <form [formGroup]="firstFormGroup">
-                <ng-template matStepLabel>First Name</ng-template>
+                <ng-template  matStepLabel>First Name</ng-template>
                 <mat-form-field>
-                    <mat-label>First Name</mat-label>
-                    <input matInput placeholder="First Name" formControlName="firstCtrl" required>
+                    <mat-label >First Name</mat-label>
+                    <input id="fname" matInput placeholder="First Name" formControlName="firstCtrl" required>
                     <mat-error>First Name is required</mat-error>
                 </mat-form-field>
                 <div>
@@ -27,7 +27,7 @@
                 <ng-template matStepLabel>Last Name</ng-template>
                 <mat-form-field>
                     <mat-label>Last Name</mat-label>
-                    <input matInput placeholder="Last Name" formControlName="secondCtrl" required>
+                    <input id="lname" matInput placeholder="Last Name" formControlName="secondCtrl" required>
                 </mat-form-field>
                 <div>
                     <button mat-button matStepperPrevious>Back</button>
@@ -40,7 +40,7 @@
                 <ng-template matStepLabel>Zip Code</ng-template>
                 <mat-form-field>
                     <mat-label>Zip Code</mat-label>
-                    <input matInput placeholder="ZipCode" formControlName="thirdCtrl" >
+                    <input id="zcode" matInput placeholder="ZipCode" formControlName="thirdCtrl" >
                 </mat-form-field>
                 <div>
                     <button mat-button matStepperPrevious>Back</button>
