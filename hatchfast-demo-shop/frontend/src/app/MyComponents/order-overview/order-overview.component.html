@@ -36,9 +36,11 @@
        
     </div>
 </div>
+
 <span >
     <button *ngIf="cartProducts && cartProducts.length > 0" mat-raised-button color="accent" routerLink="/shop"
         class="cancelButton">&lt;- Continue Shopping</button>
     <button *ngIf="cartProducts && cartProducts.length > 0" routerLink="/finishPage" mat-raised-button color="primary" (click)="finishButtonClick()" class="continueButton">Finish</button>
 </span>
+
 
